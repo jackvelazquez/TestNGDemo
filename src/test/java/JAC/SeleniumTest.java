@@ -16,16 +16,19 @@ public class SeleniumTest {
     @Test
     public void  AmazonTitleTest()
     {
+        System.out.println("Test Started...");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        System.out.println("Testing Title Method");
+        System.out.println("Opening browser...");
         driver.get("https://www.amazon.com.mx/") ;
 
-
+        System.out.println("Validating Title...");
         String expectedTitle = "Amazon.com.mx: Precios bajos - Envío rápido - Millones de productos";
         String actualTitle = driver.getTitle();
+
+        System.out.println("    --> " + actualTitle);
         Assert.assertEquals(actualTitle, expectedTitle);
 
         // Click Logo
@@ -39,7 +42,9 @@ public class SeleniumTest {
         WebElement objSearchBtn = driver.findElement(By.id("nav-search-submit-button"));
         objSearchBtn.click();
 
+        System.out.println("Closing Browser...");
         driver.close();
+        System.out.println("Test Completed");
     }
 
 
