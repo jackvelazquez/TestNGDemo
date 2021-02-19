@@ -1,0 +1,8 @@
+<suite name="Test Automation Suite" verbose="1" >
+    <test name="testcase1">
+        <classes>
+            <class name="JAC.SeleniumTest"/>
+        </classes>
+    </test>
+</suite>
+
