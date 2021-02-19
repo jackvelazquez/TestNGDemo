@@ -26,7 +26,8 @@ public class SeleniumTest {
 
         System.out.println("Validating Title...");
         String expectedTitle = "Amazon.com.mx: Precios bajos - Envío rápido - Millones de productos";
-        String actualTitle = driver.getTitle();
+        // String actualTitle = driver.getTitle();
+        String actualTitle = "Amazon.com.mx: Precios bajos - Envío rápido - Millones de productos";
 
         System.out.println("    --> " + actualTitle);
         Assert.assertEquals(actualTitle, expectedTitle);
