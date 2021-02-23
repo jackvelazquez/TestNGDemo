@@ -1,6 +1,7 @@
 package JAC;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.hc.core5.reactor.Command;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,34 +9,42 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-
 public class SeleniumTest {
 
-    @BeforeGroups
-    public void  BeforeGroupsFunc() { System.out.println("Before Groups..."); }
+    //  TESPLAN
 
-    @BeforeSuite
-    public void  BeforeSuiteFunc() { System.out.println("Before Suite..."); }
+    @Test (priority=2, groups="regression")
+    public void  RegressionTest1()
+    {
+        System.out.println("Regression Test 1");
+        Assert.assertTrue(true);
+    }
 
-    @BeforeTest
-    public void  BeforeTestFunc() { System.out.println("Before Test..."); }
+    @Test (priority=1, groups="regression")
+    public void  RegressionTest2()
+    {
+        System.out.println("Regression Test 2");
+        Assert.assertTrue(true);
+    }
 
-    @BeforeMethod
-    public void  BeforeMethodFunc() { System.out.println("Before Method..."); }
+    @Test (priority=3, groups={"regression","sanity"})
+    public void  RegressionTest3()
+    {
+        System.out.println("Regression & Sanity Test");
+        Assert.assertTrue(true);
+    }
 
-    @BeforeClass
-    public void  BeforeClassFunc() { System.out.println("Before Class..."); }
-
-    // Main  TESTPLAN
-    @Test
+    @Test (priority=4, groups={"e2e", "sanity"})
     @Parameters({"param1"})
     public void  AmazonTitleTest(String param1)
     {
+
+        System.out.println("e2e and sanity flows started");
+        System.out.println("Parameter passed to class --> " + param1);
+
         //Starts the web driver
         WebDriver driver;
 
-        System.out.println("Parameter passed to AmazonTitleTest --> " + param1);
-        System.out.println("Test Started...");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -52,7 +61,6 @@ public class SeleniumTest {
         Assert.assertEquals(actualTitle, expectedTitle);
 
         // Click Logo
-        //https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html
         WebElement objLogo = driver.findElement(By.id("nav-logo-sprites"));
         objLogo.click();
 
@@ -65,32 +73,54 @@ public class SeleniumTest {
         System.out.println("Closing Browser...");
         driver.close();
         System.out.println("Test Completed");
+
+        // END of Main Execution Plan
     }
 
-    @Test
-    public void  SimpleTest1()
-    {
-        System.out.println("Simple Test Doing nothing...");
-        Assert.assertTrue(true);
+    static class SaveForLater {
+
+        //https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html
+
+        @BeforeGroups
+        public void  BeforeGroupsFunc() { System.out.println("Before Groups..."); }
+
+        @BeforeSuite
+        public void  BeforeSuiteFunc() { System.out.println("Before Suite..."); }
+
+        @BeforeTest
+        public void  BeforeTestFunc() { System.out.println("Before Test..."); }
+
+        @BeforeMethod
+        public void  BeforeMethodFunc() { System.out.println("Before Method..."); }
+
+        @BeforeClass
+        public void  BeforeClassFunc() { System.out.println("Before Class..."); }
+
+        @Test
+        public void  SimpleTest1()
+        {
+            System.out.println("Simple Test Doing nothing...");
+            Assert.assertTrue(true);
+        }
+
+        // END of Main Execution Plan
+
+        @AfterMethod
+        public void  AfterMethodFunc() { System.out.println("After Method...");  }
+
+        @AfterClass
+        public void  AfterClassFunc() { System.out.println("After Class..."); }
+
+        @AfterTest
+        public void  AfterTestFunc() {  System.out.println("After Test..."); }
+
+        @AfterSuite
+        public void  AfterSuiteFunc()
+        { System.out.println("After Suite..."); }
+
+        @AfterGroups
+        public void  AfterGroupsFunc() { System.out.println("After Groups..."); }
+
     }
-
-    // END of Main Execution Plan
-
-
-    @AfterMethod
-    public void  AfterMethodFunc() { System.out.println("After Method...");  }
-
-    @AfterClass
-    public void  AfterClassFunc() { System.out.println("After Class..."); }
-
-    @AfterTest
-    public void  AfterTestFunc() {  System.out.println("After Test..."); }
-
-    @AfterSuite
-    public void  AfterSuiteFunc()
-    { System.out.println("After Suite..."); }
-
-    @AfterGroups
-    public void  AfterGroupsFunc() { System.out.println("After Groups..."); }
-
 }
+

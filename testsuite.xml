@@ -1,16 +1,9 @@
-<suite name="Test Automation Suite 1 " verbose="1" thread_count="2" parallel="tests" >
-    <test name="testcase11">
-        <parameter name="param1" value="Parametro pasado a la prueba Suite 1, Prueba 1"/>
+<suite name="Test Automation Suite 1 " verbose="1" thread_count="1" parallel="tests" >
+    <test name="testcase1">
+        <parameter name="param1" value="Parametro enviado desde XML"/>
         <classes>
             <class name="JAC.SeleniumTest"/>
         </classes>
     </test>
-    <test name="testcase12">
-        <parameter name="param1" value="Parametro pasado a la prueba Suite 1, Prueba 2"/>
-        <classes>
-            <class name="JAC.SeleniumTest"/>
-        </classes>
-    </test>
-
 </suite>
 
