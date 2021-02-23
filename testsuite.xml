@@ -5,7 +5,6 @@
             <class name="JAC.SeleniumTest"/>
         </classes>
     </test>
-
     <test name="testcase12">
         <parameter name="param1" value="Parametro pasado a la prueba Suite 1, Prueba 2"/>
         <classes>

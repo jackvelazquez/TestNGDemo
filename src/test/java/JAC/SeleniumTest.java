@@ -26,7 +26,7 @@ public class SeleniumTest {
     @BeforeClass
     public void  BeforeClassFunc() { System.out.println("Before Class..."); }
 
-    // Main TESTPLAN
+    // Main  TESTPLAN
     @Test
     @Parameters({"param1"})
     public void  AmazonTitleTest(String param1)
