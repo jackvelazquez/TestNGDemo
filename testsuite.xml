@@ -1,9 +1,14 @@
-<suite name="Test Automation Suite 1 " verbose="1" thread_count="1" parallel="tests" >
-    <test name="testcase1">
-        <parameter name="param1" value="Parametro enviado desde XML"/>
+<suite name="Test Automation Suite 1 ">
+    <test name="TC1">
+        <parameter name="param1" value="parametro xml"/>
+        <groups>
+            <run>
+                <include name="amazon"/>
+            </run>
+        </groups>
         <classes>
             <class name="JAC.SeleniumTest"/>
         </classes>
+
     </test>
 </suite>
-

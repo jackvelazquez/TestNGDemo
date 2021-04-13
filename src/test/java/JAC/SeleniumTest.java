@@ -1,7 +1,6 @@
 package JAC;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.hc.core5.reactor.Command;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,30 +10,30 @@ import org.testng.annotations.*;
 
 public class SeleniumTest {
 
-    //  TESPLAN
+    //TESPLAN
 
     @Test (priority=2, groups="regression")
     public void  RegressionTest1()
     {
-        System.out.println("Regression Test 1");
+        System.out.println("Regression Test 1 - priority 2");
         Assert.assertTrue(true);
     }
 
     @Test (priority=1, groups="regression")
     public void  RegressionTest2()
     {
-        System.out.println("Regression Test 2");
+        System.out.println("Regression Test 2 - priority 1");
         Assert.assertTrue(true);
     }
 
     @Test (priority=3, groups={"regression","sanity"})
     public void  RegressionTest3()
     {
-        System.out.println("Regression & Sanity Test");
+        System.out.println("Regression & Sanity Test Group started");
         Assert.assertTrue(true);
     }
 
-    @Test (priority=4, groups={"e2e", "sanity"})
+    @Test (priority=4, groups={"e2e", "sanity", "amazon"})
     @Parameters({"param1"})
     public void  AmazonTitleTest(String param1)
     {
@@ -77,9 +76,13 @@ public class SeleniumTest {
         // END of Main Execution Plan
     }
 
-    static class SaveForLater {
+    static class AnotationsExample {
 
         //https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html
+
+        // youtube learning
+        // https://www.youtube.com/watch?v=E8VCw2CPUv4
+        // Youtube -- Selenium Java Framework for Beginners
 
         @BeforeGroups
         public void  BeforeGroupsFunc() { System.out.println("Before Groups..."); }
