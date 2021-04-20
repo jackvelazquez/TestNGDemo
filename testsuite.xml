@@ -3,7 +3,7 @@
         <parameter name="param1" value="parametro xml"/>
         <groups>
             <run>
-                <include name="amazon"/>
+                <include name="e2e"/>
             </run>
         </groups>
         <classes>
