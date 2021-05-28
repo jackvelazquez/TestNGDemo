@@ -74,8 +74,6 @@ public class SeleniumTest {
         driver.close();
         System.out.println("Test Completed");
 
-        // END of Main Execution Plan
-
     }
 
 }
