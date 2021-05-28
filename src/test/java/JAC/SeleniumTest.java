@@ -34,12 +34,12 @@ public class SeleniumTest {
         Assert.assertTrue(true);
     }
 
-    @Test (priority=4, groups={"e2e", "sanity", "amazon"})
+    @Test (priority=4, groups={"e2e", "sanity", "regression"})
     @Parameters({"param1"})
     public void  AmazonTitleTest(String param1)
     {
 
-        System.out.println("e2e and sanity flows started");
+        System.out.println("Amazon Title Test started");
         System.out.println("Parameter passed to class --> " + param1);
 
         //Starts the web driver
