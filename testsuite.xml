@@ -3,7 +3,7 @@
         <parameter name="param1" value="parametro xml"/>
         <groups>
             <run>
-                <include name="regression"/>
+                <include name="sanity"/>
             </run>
         </groups>
         <classes>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-05-28T14:57:22Z" name="Test Automation Suite 1 " finished-at="2021-05-28T14:57:32Z" duration-ms="10498">
+    <groups>
+      <group name="amazon">
+        <method signature="SeleniumTest.AmazonTitleTest(java.lang.String)[pri:4, instance:JAC.SeleniumTest@7e9a5fbe]" name="AmazonTitleTest" class="JAC.SeleniumTest"/>
+      </group> <!-- amazon -->
+      <group name="e2e">
+        <method signature="SeleniumTest.AmazonTitleTest(java.lang.String)[pri:4, instance:JAC.SeleniumTest@7e9a5fbe]" name="AmazonTitleTest" class="JAC.SeleniumTest"/>
+      </group> <!-- e2e -->
+      <group name="sanity">
+        <method signature="SeleniumTest.AmazonTitleTest(java.lang.String)[pri:4, instance:JAC.SeleniumTest@7e9a5fbe]" name="AmazonTitleTest" class="JAC.SeleniumTest"/>
+      </group> <!-- sanity -->
+    </groups>
+    <test started-at="2021-05-28T14:57:22Z" name="TC1" finished-at="2021-05-28T14:57:32Z" duration-ms="10498">
+      <class name="JAC.SeleniumTest">
+        <test-method signature="AmazonTitleTest(java.lang.String)[pri:4, instance:JAC.SeleniumTest@7e9a5fbe]" started-at="2021-05-28T09:57:22Z" name="AmazonTitleTest" finished-at="2021-05-28T09:57:32Z" duration-ms="10498" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[parametro xml]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AmazonTitleTest -->
+      </class> <!-- JAC.SeleniumTest -->
+    </test> <!-- TC1 -->
+  </suite> <!-- Test Automation Suite 1  -->
+</testng-results>
